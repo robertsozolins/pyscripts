@@ -1,0 +1,6 @@
+ {image1}
+ As we now have basic understanding on how to parse a basic website, lets dive in to something more interesting – parsing crypto currency site that contains a table with current currency prices in it.
+
+ Heading to https://coinmarketcap.com and checking out the source code {image2} we see that table with id “currencies” > “tbody” tag > “tr” tag contains our desired data. As the first line contains numbers that we don’t need so we are targeting our foor loop to start searching from tds[1] that means from the second column > “a” tag > class “currency-name-container”. The symbol is in “a” tag. URL is in “a” tag and contains href attribute. Price is located at 4th column in “a” tag within “data-usd” attribute.
+
+ After we got all this written down, we will execute the code and export our results in to csv file. This is how the end result looks like. {image3}
