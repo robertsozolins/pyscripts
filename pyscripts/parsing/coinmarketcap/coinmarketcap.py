@@ -3,9 +3,11 @@ from bs4 import BeautifulSoup
 import csv
 import datetime
 
+
 def get_html(url):
     r = requests.get(url)
     return r.text
+
 
 def get_page_data(html):
     # https://coinmarketcap.com
@@ -25,6 +27,7 @@ def get_page_data(html):
                 'date': today}
         write_csv(data)
 
+
 def write_csv(data):
     with open('coinmarket.csv', 'a', newline='') as f:
         writer = csv.writer(f)
@@ -35,9 +38,11 @@ def write_csv(data):
                          data['date']
                          ])
 
+
 def main():
     url = 'http://coinmarketcap.com/'
     get_page_data(get_html(url))
+
 
 if __name__ == "__main__":
     main()
